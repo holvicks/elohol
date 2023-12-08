@@ -1,0 +1,119 @@
+/* .navbar-light .navbar-nav .nav-item .nav-link {
+    color: #8d97ad;
+    opacity: 1;
+  }
+  
+  .navbar-light .navbar-nav .nav-item .nav-link.nuxt-link-exact-active {
+    color: #8d97ad;
+  }
+  
+  .navbar-light .navbar-nav .nav-item:hover .nav-link {
+    color: #0d3386;
+  }
+
+
+  @media (max-width: 767px) {
+    .header1,
+    .header2 {
+      .navigation {
+        display: none;
+      }
+  
+      .navbar-nav {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        flex-direction: column;
+      }
+  
+      .navbar-nav .nav-item .nav-link {
+        line-height: 55px !important;
+      }
+    }
+  
+    .header1 {
+      z-index: 9 !important;
+    }
+  
+    .header1 .v-toolbar__content {
+      z-index: 1;
+    }
+  
+    .header1 .navbar-nav {
+      background-color: #0d3386; /* Replace $light with the actual color value */
+    
+  
+body{
+  font-family: Rubik,Helvetica,Arial,sans-serif;
+
+ 
+}
+
+.addColor{
+  background: linear-gradient(to right, #9c7af2 0%, #7e6eed 150%);
+ border-radius: 0% 0% 50% 50% / 0% 0% 30% 30%;
+ width: 2000px; /* Use a value larger than the viewport width */
+ overflow: hidden;
+}
+
+.addColors{
+  background: linear-gradient(to right, #9c7af2 0%, #7e6eed 150%);
+
+}
+
+
+
+.rounded-custom {
+  border-radius: 90px; /* Set your desired border-radius value */
+}
+.jus {
+  display: inline-block;
+}
+
+
+
+
+@media screen and (min-width:480px){
+  .text-h3 {
+    font-size: 5px; 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mb-2 {
+    margin-bottom: 2rem; /* Adjust margin for spacing on mobile screens */
+  }
+}
+
+
+
+.img-1  {
+  width:150px;
+  display:inline-block;
+}
+
+.customBtn {
+  background: linear-gradient(-45deg, #9B79F1, #6865E9);
+  transition: background 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.customBtn:hover {
+  background: linear-gradient(45deg, #9B79F1, #6865E9);
+  transition-delay: 0.1s; /* Delay the transition by 0.3 seconds */
+  transform: translateY(-0.1cm);
+}
+
+
+.shapes2 {
+  background-color: #F8F8F8;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 50% 50% / 30% 30% 30% 30%;
+  width: 140%;
+  height:1000px;
+}
+
+.shapes2 > h1{
+  font-size:45px;
+}
