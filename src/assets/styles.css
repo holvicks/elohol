@@ -1,53 +1,7 @@
-/* .navbar-light .navbar-nav .nav-item .nav-link {
-    color: #8d97ad;
-    opacity: 1;
-  }
-  
-  .navbar-light .navbar-nav .nav-item .nav-link.nuxt-link-exact-active {
-    color: #8d97ad;
-  }
-  
-  .navbar-light .navbar-nav .nav-item:hover .nav-link {
-    color: #0d3386;
-  }
-
-
-  @media (max-width: 767px) {
-    .header1,
-    .header2 {
-      .navigation {
-        display: none;
-      }
-  
-      .navbar-nav {
-        position: absolute;
-        left: 0;
-        top: 80px;
-        width: 100%;
-        flex-direction: column;
-      }
-  
-      .navbar-nav .nav-item .nav-link {
-        line-height: 55px !important;
-      }
-    }
-  
-    .header1 {
-      z-index: 9 !important;
-    }
-  
-    .header1 .v-toolbar__content {
-      z-index: 1;
-    }
-  
-    .header1 .navbar-nav {
-      background-color: #0d3386; /* Replace $light with the actual color value */
-    
-  
 body{
-  font-family: Rubik,Helvetica,Arial,sans-serif;
-
- 
+  font-family: Rubik,Helvetica,Arial,sans-serif; 
+  width:100%;
+  overflow: hidden;
 }
 
 .addColor{
@@ -62,8 +16,6 @@ body{
 
 }
 
-
-
 .rounded-custom {
   border-radius: 90px; /* Set your desired border-radius value */
 }
@@ -71,20 +23,28 @@ body{
   display: inline-block;
 }
 
-
-
-
 @media screen and (min-width:480px){
   .text-h3 {
     font-size: 5px; 
   }
+
+  .customicon{
+    font-size: 40px;
+  }
+
+
 }
+
+
+
 
 @media screen and (max-width: 600px) {
   .mb-2 {
     margin-bottom: 2rem; /* Adjust margin for spacing on mobile screens */
   }
 }
+
+
 
 
 
@@ -105,15 +65,40 @@ body{
 }
 
 
-.shapes2 {
-  background-color: #F8F8F8;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50% 50% 50% 50% / 30% 30% 30% 30%;
-  width: 140%;
-  height:1000px;
-}
 
 .shapes2 > h1{
-  font-size:45px;
+  font-size:40px;
 }
+
+
+.process-box{
+width:100px;
+height:100px;
+background-color: #ffffff;
+box-shadow: 0px 0px 50px rgba(199, 197, 197, 0.5);
+border-radius:30px;
+align-items: center;
+justify-content: center;
+
+}
+
+.process-box:hover{
+background-color: #38CB89;
+  }
+
+  .process-box:hover .customicon {
+    color: #fff;
+  }
+
+  .customicon{
+    color:#38CB89;
+  }
+
+  .img-shadow {
+    filter: drop-shadow(2px 2px 10px #e2e1e1);
+
+  }
+
+  .login-screen {
+color:#EE7455;
+  }

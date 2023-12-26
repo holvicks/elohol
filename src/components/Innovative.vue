@@ -54,7 +54,6 @@
       </v-row>
     </v-col>
 
-
     <v-col cols="12" md="6" lg="6" sm="10" class="pa-10 custom-hover">
       <v-row  justify-md="center" align-md="center">
         <v-col cols="3" lg="3" md="3" sm="2">
@@ -69,6 +68,7 @@
          <h4 class="py-2 text-subheadColor"> Connect ideas </h4> 
           <p class="text-subtextColor">Consider this app a platform for connecting people from everywhere based on their preferences.</p>
         </v-col>
+    
       </v-row>
     </v-col>
   </v-row>
@@ -78,7 +78,6 @@
 export default{
   name: 'Innovative',
   data:() => ({
-    
   }),
 }
 </script>
