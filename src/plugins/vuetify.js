@@ -22,7 +22,7 @@ const myCustomLightTheme = {
     buttonColor : '#7E6DED',
     subColor:'#2E3280',
     subtextColor: '#7e7e7e',
-    subheadColor: '#6D70A6'
+    subheadColor: '#6D70A6',
   },
 }
 

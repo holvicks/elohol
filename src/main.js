@@ -7,10 +7,13 @@ import { loadFonts } from './plugins/webfontloader'
 import Swiper from 'swiper';
 // import Swiper styles
 import 'swiper/css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+
+AOS.init();
 
 loadFonts()
-
 createApp(App)
   .use(router)
   .use(store)

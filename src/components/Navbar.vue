@@ -1,14 +1,14 @@
-
 <template>
   <nav>
     <!-- Vuetify Application Bar -->
     <v-app-bar
       app
-      class="navbar-light padi transparent"
-      style="padding: 0 98px"
+      class="navbar-light navbar-res  py-5 transparent"
       :color="navbarColor"
       light
       :elevation="elevation"
+      :class="{'navbarLight':isScrolled}"
+       :style="{  opacity: isScrolled ? 1 : 1}"
     >
       <!-- Title in the Toolbar -->
       <v-toolbar-title :style="{ color: textColor }" class="d-flex">
@@ -27,8 +27,13 @@
         </v-list>
       </div>
 
+      <v-spacer></v-spacer>
       <!-- Button for Larger Screens -->
-      <v-btn class="bg-white hidden-sm-and-down text-buttonColor" >Hire us now</v-btn>
+      <v-btn flat class="bg-white navBtn  justify-center align-center" style="color:#5945e6 !important;" height="50"  
+          min-width="170" :class="{'scrolled-border': isScrolled}">
+      <b>Hire us Now</b>
+     </v-btn>
+      <!-- <v-btn  flat class="bg-white navBtn hidden-sm-and-down  font-weight-bold justify-center align-center pa-5" style="color:#5945e6 !important;">Hire us now</v-btn> -->
 
       <!-- Navigation Icon for Small Screens -->
       <v-app-bar-nav-icon
@@ -79,7 +84,8 @@ export default {
   methods: {
     // Handles the scroll event to update the isScrolled property
     handleScroll() {
-      this.isScrolled = window.scrollY > 20; // Set to true if the user has scrolled more than 5 pixels
+      this.isScrolled = window.scrollY > 100; // Set to true if the user has scrolled more than 5 pixels
+      this.elevation = this.isScrolled ? 10 : 0;
     },
   },
   watch: {
@@ -106,12 +112,27 @@ export default {
   background: transparent !important;
 }
 
-.navbar-light {
-  color: white !important; /* Set default text color */
+
+
+.navbarLight {
+  transition: all .9s;
 }
 
-.navbar-light.scrolled {
-  background: white !important;
-  color: black; /* Set text color to black when scrolled */
+@media screen and (min-width:720px){
+  .navbar-res{
+    padding:0 98px !important;  
+}
+}
+
+
+.navbar-res{
+  padding:0 10px;
+}
+
+.scrolled-border{
+  border: 2px solid #5945e6 !important;
+}
+.v-app-bar {
+  transition: opacity 0.5s ease-in-out;
 }
 </style>

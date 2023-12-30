@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid style="padding:0px" >
+  <v-container fluid style="padding:0px" data-aos="fade-up">
     <div class="shapes" style="position: relative; padding:100px 50px;">
     <v-col cols="12" md="12" lg="12" >
           <div class="text-center align-center">
@@ -43,15 +43,15 @@
   </v-container>
 
 
-<v-container class="pa-5 mt-5">
+<v-container class="pa-5 mt-5" data-aos="fade-up">
   <Swipercomp />
 </v-container>
 
-<v-container class="pa-5 mt-5">
+<v-container class="pa-5 mt-5" data-aos="fade-up">
   <Animatedcircle />
 </v-container>
 
-<v-container>
+<v-container data-aos="fade-up">
   <div class="text-h5 text-lg-h3  text-center py-5 font-weight-bold text-subColor textinnovative">
     Innovative Ideas for Apps
   </div>
@@ -60,7 +60,7 @@
   <!-- Innovative Ideas for App2-->
 </v-container>
 
-<v-container fluid  >
+<v-container fluid data-aos="fade-up" >
   <v-row justify="center" align="center">
     <v-col  cols="12" sm="7" md="7" lg="5">
       <v-img aspect-ratio="3/4"
@@ -73,12 +73,10 @@
      </div>
 
      <p class="text-subtextColor text-h6">More than 35 social platforms are integrated into the app. <br /> Cross-platform sharing & displaying followers and likes are easy <br /> and convenient with just a few clicks.</p>
-
      <v-btn flat class="mt-10 customBtn text-white" height="50"
           min-width="170">
       <v-icon icon="mdi-play"></v-icon>Intro & Demo Video
      </v-btn>
-
      <h3 class="mt-8 text-h6 text-subColor mb-10">What is next in Erosol <span class="text-success"> Learn more </span></h3>
 
     </v-col>
@@ -87,7 +85,7 @@
 
 
 
-<v-container class="mt-10" fluid style="padding: 0px;">
+<v-container class="mt-10" fluid style="padding: 0px;" data-aos="fade-up">
   <div style="position:relative; top:75px; z-index: 1000;">
   <Animatedcircle />
 </div>
@@ -205,18 +203,42 @@
 </v-container>
   </div>
 
-  <div style="position:relative; top:-90px; z-index: 1000;">
+  <div style="position:relative; top:-90px; z-index: 1000;" data-aos="fade-up">
   <Animatedcircle />
 </div>
 </v-container>
 
-<v-container>
+<v-container data-aos="fade-up">
 <p class="text-subColor text-center text-h4 text-md-h4 text-sm-h4 text-lg-h3"> <b>Subscribe to receive updates</b> </p>
-<v-row>
-  <v-col>
-
+<v-row class="justify-center mt-5" style="margin:0 auto">
+  <v-col cols="12" sm="6" md="4" lg="3">
+    <v-form>
+  <div role="form" id="" aria-label="Add a comment" class="customBtn2">
+  <input autocomplete="nickname" autocorrect="on" placeholder="Your name" type="text"/>
+</div>
+ </v-form>
   </v-col>
-  
+
+  <!--=======second input text form =======-->
+  <v-col cols="12" sm="6" md="4" lg="3">
+ <v-form>
+  <div role="form" id="" aria-label="Add a comment" class="customBtn2">
+  <input autocomplete="nickname" autocorrect="on" placeholder="Email" type="text"/>
+</div>
+ </v-form>
+</v-col>
+
+<!--====== Thirdinput text form =======-->
+<v-col cols="6" lg="2" md="4" sm="4">
+  <v-btn flat class="customBtn text-white " height="50" style="width:100%; text-transform:capitalize;" >
+  Subscribe
+  </v-btn>
+</v-col>
+
+<v-col cols="12" lg="12" class="text-center">
+  <h3 class="mt-1 text-h6 text-subColor mb-5">What is next in Erosol <span class="text-success"> Learn more </span></h3>
+</v-col>
+
 </v-row>
 </v-container>
 
@@ -224,10 +246,13 @@
 
 <script>
 import { ref, watch, onMounted } from 'vue';
+import AOS from 'aos'; // Add this import line
+import 'aos/dist/aos.css';
 import Animatedcircle from '../components/Animatedcircle.vue'
 import Animatedcircle2 from '../components/Animatedcircle2.vue'
 import Innovative from '../components/Innovative.vue'
 import Swipercomp from '../components/Swipercomp.vue'
+
 
 export default {
   name: "Homepage",
@@ -246,14 +271,13 @@ export default {
     ]);
 
 
-    // watch(() => $vuetify.breakpoint.smAndDown, (isSmAndDown) => {
-    //   sectionleft.value = isSmAndDown;
-    // });
+    onMounted(() => {
+      AOS.init(); // Initialize AOS
 
-    // // Watch for changes in $vuetify.breakpoint.mdAndUp and update sectioncenter
-    // watch(() => $vuetify.breakpoint.mdAndUp, (isMdAndUp) => {
-    //   sectioncenter.value = isMdAndUp;
-    // });
+      // Refresh AOS after updating the DOM
+      AOS.refresh();
+
+    })
 
     return{
       items, sectionleft, sectioncenter
@@ -281,6 +305,20 @@ export default {
     font-size:12px;
   }
 
+  .customBtn2 input[type = "text"] {
+    background-color: #EDEDED;
+    padding:10px;
+    border-radius: 10px;
+    width:100%;
+    height: 50px;
+    font-size:13px;
+  }
+
+  .customBtn2 input[type =text]:focus {
+    outline:none; 
+    border: 3px solid #ccc;
+  }
+
 @media screen and (max-width:480px){
   .ad-feature{
     font-size:15px;
@@ -297,8 +335,7 @@ export default {
 
 }
 
-@media screen and (min-width: 480px) {
-
+    @media screen and (min-width: 480px) {
   .shapes2 {
     background:linear-gradient(#F8F8F8, #E3E9FF) ;
     transform: translateX(-15%);
