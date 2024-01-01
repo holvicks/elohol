@@ -8,7 +8,7 @@
       light
       :elevation="elevation"
       :class="{'navbarLight':isScrolled}"
-       :style="{  opacity: isScrolled ? 1 : 1}"
+       
     >
       <!-- Title in the Toolbar -->
       <v-toolbar-title :style="{ color: textColor }" class="d-flex">
@@ -115,6 +115,7 @@ export default {
 
 .navbarLight {
   transition: all .9s;
+  background-color: #FFFFFF !important;
 }
 
 @media screen and (min-width:720px){
