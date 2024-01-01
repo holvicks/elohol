@@ -46,11 +46,11 @@
 
     <!-- Navigation Drawer for Small Screens -->
     <v-navigation-drawer v-model="drawer" :width="400" class="hidden-md-and-up">
-      <v-list>
-        <v-list-item link v-for="link in links"  :key="index" router :to="link.route">
-          <v-list-item-title>{{ link.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
+      <v-list  class="mt-10">
+          <v-list-item link v-for="(link, index) in links" :key="index" :to="{ path: link.path }" v-scroll-to="`#${link.route}`">
+  <v-list-item-title>{{ link.title }}</v-list-item-title>
+</v-list-item>
+        </v-list>
     </v-navigation-drawer>
   </nav>
 </template>

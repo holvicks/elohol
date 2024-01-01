@@ -1,10 +1,10 @@
 <template>
   <v-container fluid style="padding:0px" data-aos="fade-up">
     <div class="shapes" style="position: relative; padding:100px 50px;">
-    <v-col cols="12" md="12" lg="12" >
+    <v-col cols="12" md="12" lg="12"  >
           <div class="text-center align-center">
-            <div class="mt-8">
-            <h1 class="mb-5 banner-title font-weight-bold  text-md-h2 text-sm-h3 text-lg-h2 text-white">
+            <div class="mt-8 px-10">
+            <h1 class="mb-5 banner-title font-weight-bold  text-h3 text-md-h2 text-sm-h3 text-lg-h2 text-white">
               Download our App Today
             </h1>
             <h3 class="banner-subtitle white--text font-weight-regular text-white">
