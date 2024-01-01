@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import VueScrollTo from 'vue-scrollto'
 import { loadFonts } from './plugins/webfontloader'
 import Swiper from 'swiper';
 // import Swiper styles
@@ -16,6 +17,7 @@ AOS.init();
 loadFonts()
 createApp(App)
   .use(router)
+  .use(VueScrollTo)
   .use(store)
   .use(vuetify)
   .mount('#app')

@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav id="">
     <!-- Vuetify Application Bar -->
     <v-app-bar
       app
@@ -20,21 +20,20 @@
 
       <!-- Navigation Links for Larger Screens -->
       <div class="hidden-sm-and-down transparent">
-        <v-list class="d-flex align-center transparent" :style="{ color: textColor }">
-          <v-list-item link v-for="link in links" :key="index" :to="link.route">
-            <v-list-item-title>{{ link.title }}</v-list-item-title>
-          </v-list-item>
+        <v-list class="d-flex align-center transparent" :style="{ color: textColor }" >
+          <v-list-item link v-for="(link, index) in links" :key="index" :to="{ path: link.path }" v-scroll-to="`#${link.route}`" :class="{customlink:link.title}">
+  <v-list-item-title>{{ link.title }}</v-list-item-title>
+</v-list-item>
         </v-list>
       </div>
 
       <v-spacer></v-spacer>
       <!-- Button for Larger Screens -->
-      <v-btn flat class="bg-white navBtn  justify-center align-center" style="color:#5945e6 !important;" height="50"  
+      <v-btn flat class="bg-white navBtn hidden-md-and-down justify-center align-center" style="color:#5945e6 !important;" height="50"  
           min-width="170" :class="{'scrolled-border': isScrolled}">
       <b>Hire us Now</b>
      </v-btn>
       <!-- <v-btn  flat class="bg-white navBtn hidden-sm-and-down  font-weight-bold justify-center align-center pa-5" style="color:#5945e6 !important;">Hire us now</v-btn> -->
-
       <!-- Navigation Icon for Small Screens -->
       <v-app-bar-nav-icon
         prominent
@@ -48,7 +47,7 @@
     <!-- Navigation Drawer for Small Screens -->
     <v-navigation-drawer v-model="drawer" :width="400" class="hidden-md-and-up">
       <v-list>
-        <v-list-item link v-for="link in links" :key="index" :to="link.route">
+        <v-list-item link v-for="link in links"  :key="index" router :to="link.route">
           <v-list-item-title>{{ link.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -62,10 +61,10 @@ export default {
     return {
       drawer: false, // Controls the state of the navigation drawer
       links: [
-        { title: 'Home', route: 'home' },
-        { title: 'About-us', route: 'about-us' },
-        { title: 'Service', route: 'service' },
-        { title: 'Contact', route: 'contact' },
+        { title: 'Home', path:'/', route: 'home' },
+        { title: 'About-us', path:'/about-us', route: 'about-us'},
+        { title: 'Service', path:'/service', route: 'service' },
+        { title: 'Contact', path:'/contact', route: 'contact' },
       ],
       elevation: 0, // Initial elevation of the app bar
       isScrolled: false, // To track if the user has scrolled
@@ -134,5 +133,23 @@ export default {
 }
 .v-app-bar {
   transition: opacity 0.5s ease-in-out;
+}
+.customlink:hover {
+  border-bottom: 2px solid #FFFFFF;
+  transition:all ease-in-out .3s; 
+}
+.customlink::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  left: 50%;
+  bottom:0;
+  background-color: white;
+  transition: all ease-in-out .5s;
+}
+.customlink:hover::after{
+  width: 100%;
+  left: 0;
 }
 </style>

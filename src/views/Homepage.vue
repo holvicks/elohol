@@ -47,18 +47,19 @@
   <Swipercomp />
 </v-container>
 
-<v-container class="pa-5 mt-5" data-aos="fade-up">
+<v-container class="pa-5 mt-5" data-aos="fade-up" >
   <Animatedcircle />
 </v-container>
 
-<v-container data-aos="fade-up">
-  <div class="text-h5 text-lg-h3  text-center py-5 font-weight-bold text-subColor textinnovative">
+<v-container data-aos="fade-up" id="about-us">
+  <div class="text-h5 text-lg-h3  text-center py-5 font-weight-bold text-subColor textinnovative" >
     Innovative Ideas for Apps
   </div>
 <!-- Innovative Ideas for App1-->
 <Innovative />
   <!-- Innovative Ideas for App2-->
 </v-container>
+
 
 <v-container fluid data-aos="fade-up" >
   <v-row justify="center" align="center">
@@ -85,7 +86,7 @@
 
 
 
-<v-container class="mt-10" fluid style="padding: 0px;" data-aos="fade-up">
+<v-container class="mt-10" fluid style="padding: 0px;" data-aos="fade-up" id="service">
   <div style="position:relative; top:75px; z-index: 1000;">
   <Animatedcircle />
 </div>
@@ -208,7 +209,7 @@
 </div>
 </v-container>
 
-<v-container data-aos="fade-up">
+<v-container data-aos="fade-up" id="contact">
 <p class="text-subColor text-center text-h4 text-md-h4 text-sm-h4 text-lg-h3"> <b>Subscribe to receive updates</b> </p>
 <v-row class="justify-center mt-5" style="margin:0 auto">
   <v-col cols="12" sm="6" md="4" lg="3">
